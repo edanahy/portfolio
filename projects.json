@@ -1,0 +1,333 @@
+[
+  {
+    "id": "coderobots-ai",
+    "year": "2023–present",
+    "title": "CodeRobots.ai: GenAI Robotics Interface",
+    "excerpt": "A hardware-agnostic platform that lets students prompt-to-control physical robots through natural language, with skill-adaptive scaffolding and classroom-tested guardrails, open-sourced for institutional adoption.",
+    "hero": "CodeRobotsBanner.png",
+    "tags": ["Generative AI", "Physical Computing", "LEGO Robotics", "Secondary", "University"],
+    "sections": [
+      { "id": "overview", "value": "CodeRobots.ai is a GenAI-assisted coding interface connecting natural language input to physical robotics platforms, including LEGO Education's SPIKE Prime, micro:bit, Raspberry Pi, ESP32, XRP, and others. Students describe what they want a robot to do and the system generates runnable code, adapting its scaffolding and vocabulary to their self-reported skill level. The platform launched in mid-2023 (following launch of ChatGPT in Fall 2022) and has since been tested across middle school classrooms, summer camps, high school courses, and undergraduate engineering design programs." },
+      { "id": "role", "value": "I conceived the platform, led its architecture, and drove iterative prototyping across the interface, AI integration, and hardware layers. I designed the structured prompting and helped ideate the guardrail systems, mading the decision to open-source the project to enable institutional partners to further adapt it for their individual use cases." },
+      { "id": "technical", "value": [
+        "LLM code generation pipeline integrated with multiple embedded robotics platforms, hardware-agnostic by design",
+        "Structured prompting and guardrail layer that constrains AI outputs to syntactically valid and age/skill-appropriate code",
+        "Self-reported expertise levels (e.g. Beginner, Intermediate, Expert) that dynamically adjust the AI's scaffolding, vocabulary, and code complexity",
+        "Web-based interface supporting classroom deployment without per-device installation",
+        "Open-source codebase structured for institutional forks and multi-context adaptation"
+      ]},
+      {
+        "id": "media", "value": { "label": "CodeRobots.ai Interface", "images": [
+          { "src": "CodeRobotsCode.png", "caption": "Main CodeRobots interface" }, 
+          { "src": "CodeRobotsLevels.png", "caption": "Adjustable leveling" }, 
+          { "src": "CodeRobotsDK.png", "caption": "Danish implementation (collaboration with SkoleGPT)" }
+        ] }
+      },
+      { "id": "decisions", "value": "The Beginner/Intermediate/Expert self-identification system emerged from a clear observation: a single AI voice and code style was either too opaque or too hand-holding depending on the student. Letting students self-select meant the system could meet them where they were without requiring instructors to manually differentiate between learners. Further, I've led the extensions of CodeRobots to additional hardware platforms, different LLM-models, and experimenting with alternative UI interface designs." },
+      { "id": "collaboration", "value": "The platform has evolved through partnerships with other academic institutions who've since deployed it in their own contexts, with feedback shaping interface refinements, LLM tuning, and new hardware targets. Testing across diverse settings (summer camps, middle school, high school, university) surfaced requirements that wouldn't have been visible from a single deployment context." },
+      { "id": "outcomes", "value": [
+        "The self-leveling scaffolding system reduced the visible gap between novice and experienced students working on the same hardware tasks",
+        "Open-sourcing enabled adoption across partner institutions and made the platform viable beyond what a single lab could sustain",
+        "The structured prompting architecture established patterns that carried into subsequent LLM-robotics projects"
+      ]}
+    ]
+  },
+
+  {
+    "id": "transmogrifier",
+    "year": "2025",
+    "title": "Transmogrifier: Applying Behaviors to LEGO Robots",
+    "excerpt": "A physical cardboard box, inspired by Calvin and Hobbes, that interprets a handwritten card or student drawing and programs a LEGO robot to match, hiding all code and AI behind a playful, tangible interaction.",
+    "hero": "Transmogrifierhero.png",
+    "tags": ["Generative AI", "Physical Computing", "LEGO Robotics", "Elementary"],
+    "sections": [
+      { "id": "overview", "value": "The Transmogrifier is a physical box that accepts a handwritten card or student drawing alongside a LEGO robot, interprets the intent using a multimodal LLM, generates MicroPython code, and deploys it to the robot automatically. Students never see the code. They describe what they want, insert the card, and watch what happens. The gap between their mental model and the robot's interpretation is part of the experience: the robot might interpret 'ambulance going to the hospital' differently than you imagined, and that gap is where the real conversation about Generative AI begins. The system works for pre-readers using only drawings, extending the accessible age range below what any text-based interface can reach." },
+      { "id": "role", "value": "I conceived, designed, and built the full system, including the physical enclosure, computer vision pipeline, GenAI integration, code generation, and robot communication. I also produced the demo video introducing the concept publicly." },
+      { "id": "technical", "value": [
+        "Computer vision pipeline captures and interprets handwritten text or student drawings inserted into the physical box",
+        "Multimodal LLM interprets intent from image, handling precise technical instructions ('drive forward and stop at the wall') and conceptual descriptions ('ambulance going to the hospital') alike",
+        "LLM generates MicroPython code targeting LEGO SPIKE Prime, with no human review or editing step between interpretation and deployment",
+        "Automated code transfer deploys the generated program directly to the robot, completing the physical-to-physical loop",
+        "Drawing-based input extends the accessible age range to pre-readers, with no text or screen interaction required"
+      ]},
+      { "id": "media", "value": { "label": "Transmogrifier", "images": [
+        { "src": "Transmogrifier0.png", "caption": "Calvin and Hobbes Inspiration" },
+        { "src": "Transmogrifier1.png", "caption": "Transmogrifier Setup" },
+        { "src": "Transmogrifier2.png", "caption": "Brainstorm of Possible Behaviors" }
+      ]}},
+      { "id": "decisions", "value": "The entire design is organized around hiding implementation complexity without hiding the thinking. Students never write or read code, but they are doing computational thinking: decomposing a goal, sequencing it, then debugging at the conceptual level when the robot does something unexpected. The non-determinism of LLMs, which most systems try to engineer around, becomes the central teaching feature here. The physical box form factor was deliberate: it makes the AI invisible and the interaction feel tangible and slightly magical, which lowers the stakes enough for students to experiment freely." },
+      { "id": "media", "value": { "label": "Demo Video", "youtube": "https://youtu.be/c01pC4GlXNI" } },
+      { "id": "outcomes", "value": [
+        "Demonstration of possibility for pre-readers to engage with AI-driven robotics using only drawings as input, with no text, code, or screen interaction required",
+        "The conceptual debugging loop, comparing intent to the robot's interpretation, targeting higher-order discussions about AI decision-making that chat conversations typically complicate",
+        "Representative of a reusable pattern across several other projects: physical artifact in, physical behavior out, with GenAI as a hidden translation layer"
+      ]}
+    ]
+  },
+  {
+    "id": "smart-motors",
+    "year": "2021–present",
+    "title": "Smart Motors: Tangible Machine Learning for Elementary Classrooms",
+    "excerpt": "A low-cost, ESP32-based platform that lets elementary students train a motor to respond to sensor input by example, with no screen, no code, and no computer required during the interaction.",
+    "hero": "SmartMotorshero.jpg",
+    "tags": ["Machine Learning", "Physical Computing", "Elementary", "Research"],
+    "sections": [
+      { "id": "overview", "value": "Smart Motors takes a training-first approach: the entire interaction happens in the physical world, with no screen involved. Students demonstrate what they want a motor to do by showing the device sensor inputs, and the hardware learns from those examples using onboard ML inference. The goal is to make the core supervised ML loop (collect data, train, test, iterate) something young students can feel and manipulate directly, without any coding or computing experience as a prerequisite. Developed as part of an NSF-funded research project at Tufts, the platform can be embedded in cross-disciplinary engineering activities where design challenges are framed around specific contexts." },
+      { "id": "role", "value": "My role was advisory and applied. I contributed to interface design, developed curriculum and tested hardware in classroom contexts, and helped connect the platform to a broader range of learning activities. I was not the primary engineer, but stayed close enough to the work to meaningfully shape how the system was experienced by students and teachers." },
+      { "id": "technical", "value": [
+        "ESP32-based hardware with onboard ML inference, no screen or computer required during student interaction",
+        "Training-first model: students demonstrate desired sensor-to-motor mappings by example, not through writing code",
+        "Multiple built-in supervised ML algorithms selectable by students (in some versions), enabling direct comparison of learning behavior and ML algorithmic understanding",
+        "Tangible interface designed for elementary-age users with no prior technical experience",
+        "Low-cost bill of materials, a deliberate constraint to support classroom adoption and reduce equity barriers"
+      ]},
+      { "id": "decisions", "value": "Screenlessness was the non-negotiable design constraint. A tool that requires a laptop or tablet creates a setup cost, a distraction surface, and a prerequisite of technology fluency. Removing the screen also changes the nature of the activity: students focus on the physical relationship between sensor input and motor output, which focuses on the concept of understanding ML models. The cost constraint followed the same logic: for adoption and distribution, reaching a wide range of classrooms, teachers, and students requires a price-point of accessbility." },
+      { "id": "collaboration", "value": "This is a team effort led by robotics and education researchers at Tufts. My contributions sit at the intersection of the technical and curricular: testing hardware in real classroom settings, giving interface feedback grounded in how students actually interact with physical computing tools, and connecting the platform to engineering design activities. Helping interpret and ideate based on teacher and student feedback drives the iterative revisions." },
+      { "id": "media", "value": { "label": "SmartMotors", "images": [{ "src": "SmartMotors.png" }, { "src": "SmartMotors.webp" }] } },
+      { "id": "outcomes", "value": [
+        "Elementary students engaged with core ML concepts (training, testing, debugging input-to-output models) without any coding instruction, working entirely in the physical world",
+        "The screenless, training-first framing lowered barriers for both students and teachers, particularly in non-CS classroom contexts",
+        "The project reinforced a broader design principle: removing screen interaction in order to make a technical concept more focused"
+      ]}
+    ]
+  },
+  {
+    "id": "hand-classification-robot-control",
+    "year": "2025",
+    "title": "Hand Pose ML Interface for LEGO Robot Control",
+    "excerpt": "A browser-based ML interface that lets students train their own hand gesture classifiers and use them to play music and control LEGO robots",
+    "hero": "HandMLhero.png",
+    "tags": ["Machine Learning", "Physical Computing", "LEGO Robotics", "Elementary", "Research"],
+    "sections": [
+      { "id": "overview", "value": "This project brings the full supervised ML workflow into a 5th-grade classroom, not as a single standalone lesson but as an exteneded cross-disciplinary multi-day creative challenge. Students explored the capabilityies of LEGO Robotics, trained hand pose classifiers in-browser, tested their models in real time, and used those custom classes to control LEGO SPIKE Prime motors. Framed within a three-day robotic puppet show design challenge, students chose a story, wrote scripts, designed characters, built robots, trained the classifiers, and performed using hand gestures as the control interface. The combination of ELA, engineering, and AI in a single three-day arc made for one of the most complete integrations of ML education into an authentic classroom context, satisfying both the STEM teacher and Language Arts teacher simultaneously." },
+      { "id": "role", "value": "I collaborated closely with one other developer on the design, interaction workflow, and implementation, contributing to interface decisions and the curricular framing of the three-day workshop sequence. I also led classroom facilitation during the pilot, debriefing with teachers and classroom helpers to gather feedback and prep iterative improvements." },
+      { "id": "technical", "value": [
+        "Browser-based hand pose detection using MediaPipe, running on school Chromebooks without any installation",
+        "Student-facing training interface: define classes, collect samples, train, and test predictions in a single workflow designed for elementary-age users",
+        "Pilot-style dropdown interface mapping trained hand pose classes to music notes as well as LEGO SPIKE Prime motor actions, with no text programming required",
+        "Real-time confidence display makes ML inference visible and legible, so students can see the model's certainty as they move",
+        "Full workflow from data collection through motor control runs in-browser, requiring one shared device per group"
+      ]},
+      { "id": "media", "value": { "label": "Interface Design", "images": [
+        { "src": "HandML1.png", "caption": "Hand Pose Detection interface" },
+        { "src": "HandML2.png", "caption": "Students experimenting with interface" },
+        { "src": "HandML3.png", "caption": "Pilot-style drop-down robot programming interface" }
+      ]}},
+      { "id": "decisions", "value": "The central challenge was making 'what is a good training class' accessible to 10-year-olds. Instead of overly technical direct introduction, students explored capabilities through use, discovering that inconsistent or overlapping training samples produced unreliable models. Through iteration, they added (or subtracted) data, retrained models, and refined quality of interaction, then applying it to a real-world project. Anchoring the whole thing in a puppet show gave ML training a clear creative purpose, which kept students motivated through the harder parts of the workflow." },
+      { "id": "collaboration", "value": "Built in close collaboration with another developer, with curricular design shaped jointly through iterative testing. The three-day workshop was delivered with Tufts Center for Engineering Education and Outreach (CEEO) to two 5th-grade classrooms at a Somerville Public School. The school's enthusiasm was visible: the principal and superintendent both attended and expressed interest in scaling the program, and the school featured the project in its weekly parent newsletter." },
+      { "id": "media", "value": { "label": "Student Work", "images": [
+        { "src": "HandML4.gif", "caption": "Students controlling robotic alligator" },
+        { "src": "HandML5.gif", "caption": "Students controlling Shrek characters" },
+        { "src": "HandML6.jpg", "caption": "Student character design" },
+        { "src": "HandML7.png", "caption": "School newsletter post about workshop" }
+      ]}},
+      { "id": "outcomes", "value": [
+        "Students successfully trained functional hand pose classifiers and used them to perform original robotic puppet shows, combining story writing, character design, robot building, and ML training within a single project arc",
+        "The workshop showed that supervised ML concepts are accessible to 5th graders when anchored in tangible creative output, without coding or formal ML instruction as prerequisite",
+        "Identified concrete improvements for future iterations: responsive layout for small Chromebook screens, clearer guidance on building effective training classes, and more time for puppet construction"
+      ]}
+    ]
+  },
+  {
+    "id": "interlace",
+    "year": "2011–2017",
+    "title": "InterLACE: Interactive Learning and Collaboration Environment",
+    "excerpt": "A real-time collaborative classroom platform, co-designed with teachers, NSF-funded, and commercialized as Visual Classrooms, that puts student thinking at the center of class discussion.",
+    "hero": "InterLACEhero.jpg",
+    "tags": ["Collaboration", "Research", "Secondary"],
+    "sections": [
+      { "id": "overview", "value": "InterLACE is a web-based collaborative whiteboard that captures and visualizes student thinking in a shared digital space, shifting classroom dynamics from teacher-delivered content toward peer-to-peer discussion and active learning. Co-designed with high school science teachers across a multi-year $2.3M NSF-sponsored research project, the platform supports multimodal student contributions (text, images, data, design artifacts, etc.) alongside real-time analytics that help teachers see who is contributing and how. It was adopted across classrooms throughout New England and spun off into a commercialized product, <a href='http://visualclassrooms.com' target=_blank>Visual Classrooms</a>." },
+      { "id": "role", "value": "I was the Principal Investigator (PI) and system architect, responsible for the research vision, technical design, and development trajectory from early prototype through classroom-tested production system. I directed development cycles, managed the project team, and led the transition into commercialization." },
+      { "id": "technical", "value": [
+        "Real-time collaboration interface supporting multimodal student inputs (text, images, data, design artifacts, etc.) aggregated into shared class dashboards",
+        "Backend analytics providing teachers live visibility into student contributions, interaction patterns, and engagement levels",
+        "Iterative co-design process with high school science teachers (Design Team Teachers), with classroom feedback driving interface and feature decisions throughout",
+        "LMS features supporting classroom workflows (e.g. groupwork) and teacher facilitatation",
+        "Cloud-based architecture scaled for multi-classroom deployment and commercial licensing"
+      ]},
+      {
+        "id": "media", "value": { "label": "InterLACE Interface", "images": [ { "src": "InterLACE1.jpg" }, { "src": "InterLACE2.jpg" }, { "src": "InterLACE3.png" } ] }
+      },
+      { "id": "decisions", "value": "The core constraint was teacher adoption in the middle of class. The interface had to be fast enough not to disrupt flow, and the analytics had to be legible enough to act on in real time. Co-designing directly with teachers (not just testing with them) meant that pedagogical workflows shaped design and technical decisions from the beginning of the project. The backend analytics were included specifically because teachers needed to know who wasn't participating, not just what the class produced." },
+      { "id": "collaboration", "value": "The project was a genuine research-practice partnership. High school science teachers were co-designers throughout, and their classrooms were the test environment across multiple iterations. The Tufts research team studied the platform's learning impact while teacher feedback drove the product roadmap. Commercialization through Visual Classrooms extended that collaboration to a broader institutional base." },
+      { "id": "media", "value": { "label": "Visual Classrooms (commercialized product)", "youtube": "https://youtu.be/ce5mO42Z6es" } },
+      { "id": "outcomes", "value": [
+        "Classroom discussions shifted from teacher-directed to student-idea-driven in participating classrooms, a change documented and analyzed by the education researchers",
+        "The project transitioned from NSF research to a licensed commercial product (Visual Classrooms), extending its reach well beyond the original research cohort",
+        "The co-design methodology and teacher-facing analytics model carried forward as design principles into subsequent projects and R&amp;D work"
+      ]}
+    ]
+  },
+  {
+    "id": "snapbots",
+    "year": "2024–present",
+    "title": "SnapBots: Pencil-and-Paper Programming via State Diagrams",
+    "excerpt": "A programming environment where students draw hand-written state diagrams on paper, scan them, and GenAI translates their natural language logic into live, interactive digital characters, making CT education viable with as little as one shared device per class.",
+    "hero": "SnapBotshero.png",
+    "tags": ["Generative AI", "Collaboration", "Research", "Secondary"],
+    "sections": [
+      { "id": "overview", "value": "SnapBots replaces block-based or text-based code with hand-drawn state diagrams on paper. Students sketch circles (states) and arrows (transitions) in natural language, scan their diagram, and an multi-modal GenAI pipeline interprets the drawing and generates executable code, bringing their characters to life within a shared digital environment. The paper-first design means an entire class can work simultaneously without waiting for an available device, and students can share, annotate, or hand their programs to classmates as physical objects. Built on a fork of Scratch (but without the block coding component), it's designed for low-resource classrooms and to shift the focus of early CT education from syntax to systems-level thinking." },
+      { "id": "role", "value": "I serve as advisor, research supervisor, and co-author. I shaped the platform's interaction design direction, guided the research framing and methodology, supervised the student researchers building and studying the system, while contributing to the research papers evaluating the work." },
+      { "id": "technical", "value": [
+        "Multi-step GenAI pipeline: image processing extracts graph structure from hand-drawn diagrams, then parallel LLM calls generate executable code for each state and transition independently",
+        "Human-authored primitive functions constrain LLM output and reduce code generation errors, bridging the gap between natural language and the underlying code-execution environment",
+        "Built as a fork of Scratch, common paradigms such as sprites and a stage build on prior Scratch research and insights, while also inheriting the full Scratch sprite library, sound library, and range of environment interactions",
+        "Shared projected environments (e.g. soccer field, dance party) designed for whole-class collaborative participation, providing shared context and motivation with multiple student characters interacting simultaneously",
+        "Paper-first design requires as little as one shared device per classroom, making CT education viable in low-resource settings"
+      ]},
+      { "id": "media", "value": { "label": "SnapBots Examples", "images": [
+        { "src": "SnapBots1.png", "caption": "Middle school state diagram for a Cookie character based on '6-7' meme" },
+        { "src": "SnapBots2.png", "caption": "Cookie character rendered in SnapBots interface" },
+        { "src": "SnapBots3.png", "caption": "SnapBots Soccer interface" }
+      ]}},
+      { "id": "decisions", "value": "The 1:1 device assumption in most CT tools is itself an equity barrier. SnapBots was designed from the start to be viable with just a single shared computer per classroom. Moving programming to paper also changes the social dynamics: paper is inherently shareable in a way a screen isn't, creating conditions for peer discussion about program logic rather than one student holding the mouse. The state diagram format pushes students toward high-level decomposition from the start, before they've had to memorize any syntax at all." },
+      { "id": "collaboration", "value": "SnapBots is a student-researcher-led project that I advise and co-direct. The platform has been piloted in a 6th-grade classroom at a Boston-area public charter school across two research sessions, with data analysis accepted at a peer-reviewed conference." },
+      { "id": "outcomes", "value": [
+        "Students translated hand-drawn natural language diagrams into functional characters in their first session, including students with no prior coding experience, and the full-class soccer showcase generated genuine cross-group engagement",
+        "The pilot surfaced concrete improvements: LLM pipeline latency under classroom load, UI onboarding gaps, and the need for more structured intragroup collaboration scaffolding",
+        "The project is advancing a research agenda of paper as a legitimate primary programming surface, with implications for both equity and pedagogy in CT education"
+      ]}
+    ]
+  },
+  {
+    "id": "dashboard-creator-lego",
+    "year": "2024",
+    "title": "LEGO Dashboard Creator: Physical-to-Digital Interface Design",
+    "excerpt": "A prototype that converts LEGO brick layouts, or hand-drawn sketches, into functional web-based control dashboards for LEGO robotics, using GenAI as the translation layer between physical design and digital output.",
+    "hero": "Dashboardhero.png",
+    "tags": ["Generative AI", "Physical Computing", "LEGO Robotics"],
+    "sections": [
+      { "id": "overview", "value": "Most LEGO robotics projects, focusing on building and coding, treat any control interface as an afterthought (if at all). This prototype makes interface design an  important component of the activity: students arrange LEGO bricks into a rough dashboard layout, photograph it, and GenAI generates a functional interactive web interface for controling their robot. The same pipeline accepts hand-drawn sketches if brick-based inputs aren't available. The framing is a 'brick sandwich': physical construction at both ends, with AI-powered translation in the middle." },
+      { "id": "role", "value": "I conceived and built the full prototype, from the interaction concept through image interpretation, interface generation, and robotics output. This was a self-directed experiment to explore a new application of GenAI in physical computing education." },
+      { "id": "technical", "value": [
+        "Multimodal LLM pipeline interpreting photos of LEGO layouts or hand-drawn sketches as interface layout specification",
+        "LLM generates a functional interactive dashboard (buttons and controls) rendered as a professional-quality web UI",
+        "Generated dashboard subsequently sends commands directly to the LEGO robot, closing the physical-design-to-physical-output workflow",
+        "No web programming required from students: GenAI handles code generation entirely"
+      ]},
+      { "id": "media", "value": { "label": "Example", "images": [{ "src": "Dashboard1.png" }] } },
+      { "id": "decisions", "value": "The gap this prototype is trying to fill is that LEGO robotics projects rarely ask students to think about how a robot will be controlled, only how it will be built and coded. Introducing interface design as a tangible activity keeps the creative mode consistent with how students already work with LEGO, and accepting sketches alongside brick layouts increases accessibility for visual students preferring to draw." },
+      { "id": "outcomes", "value": [
+        "Demonstrated a viable path for introducing UI/UX design into robotics projects without requiring students to learn additional technologies (e.g. web development)",
+        "The physical artifact-to-digital output translation pattern extends the approach from other projects (e.g. Transmogrifier) into a new domain: interface design rather than behavior specification",
+        "Introduces a new collaboration paradigm: if students can easily design an interactive dashboard, does robot project group collaboration naturally grow to include this?"
+      ]}
+    ]
+  },
+  {
+    "id": "gists",
+    "year": "2024–present",
+    "title": "GISTs: Generative Interactive Simulations for Teaching",
+    "excerpt": "A platform that enables teachers generate custom, interactive web simulations on demand using LLMs, providing an economizal, customizable educational tool for reaching struggling students.",
+    "hero": "GISThero.png",
+    "tags": ["Generative AI", "Simulation", "Research"],
+    "sections": [
+      { "id": "overview", "value": "Interactive simulations are among the most powerful tools for student-directed learning, but building them has traditionally required a team of developers, disciplinary experts, and instructional designers at significant cost (the <a href='https://phet.colorado.edu/' target=_blank>PhET project at CU Boulder</a> is the canonical example). GISTs (Generative Interactive Simulations for Teaching) use LLMs to facilitate creation and deployment: teachers simple describe a concept and the system generates a functional, interactive browser-based simulation. The key differentiator is hyper-personalization: a student struggling with friction who loves skiing can receive a skiing simulation about friction from their teacher. This level of tailoring simply wasn't feasible at scale before LLMs. This project also explores a new idea in my work: building tools for the teacher-as-designer of the learning experience, rather than educational support strictly for student use." },
+      { "id": "role", "value": "I led the concept and drove early validation, using off-the-shelf tools to prove the initial concept, then supervised the developers building the interface. I provided ongoing feedback on pedagogical framing, interaction design, and LLM integration." },
+      { "id": "technical", "value": [
+        "LLM pipeline generating complete interactive browser simulations from teacher-authored natural language descriptions",
+        "Output is functional interactive web UI (sliders, toggles, visualizations), not just text or explanation of a concept",
+        "Theme, context, and complexity all tunable per student or classroom needs",
+        "Multi-model inputs (sketches or other expressions) under active investigation, as well as testing across different LLMs to compare simulation quality",
+        "No-install browser deployment so generated simulations are accessible immediately without additional install or setup"
+      ]},
+      { "id": "decisions", "value": "PhET is the gold standard for interactive science simulations, but it's only viable with grant funding and dedicated teams, which means the catalog is finite and teachers can't diverge from it. By incorporating LLMs, trained across disciplinary knowledge, pedagogy, and UI conventions, it can collapse the multi-expert production requirement into a single generation step. Keeping the teacher interface focused on description rather than configuration is what makes teacher adoption possible: the tool has to be usable by instructors without technical backgrounds, focusing instead of the learning outcomes enabled by interactive simulations." },
+      { "id": "media", "value": { "label": "Generative Interactive Simulations for Teaching", "images": [
+        { "src": "GIST1.png", "caption": "Experimentation of Concept-to-Interface using LLMs" },
+        { "src": "GIST2.png", "caption": "'Two Boxes Collision' Generated Simulation" }
+      ]}},
+      { "id": "collaboration", "value": "Early validation was self-directed. Implementation involved supervising the developers building the generation pipeline and interface. Current work is moving toward structured testing with science instructors and students, bringing practitioner feedback into the refinement cycle." },
+      { "id": "outcomes", "value": [
+        "Proof-of-concept validated that LLMs can generate pedagogically coherent, interactive simulations from single natural language prompts",
+        "The per-student personalization capability represents a meaningful departure from static simulation libraries, which have no equivalent to 'make this about X' based on student interests",
+        "Continues a thread across multiple projects: LLM output as a functional interactive artifact rather than simply a language response"
+      ]}
+    ]
+  },
+  {
+    "id": "llm-to-robot-chat",
+    "year": "2024–present",
+    "title": "LLM-to-Robot Direct Communication: Multi-Agent with Hardware Interaction",
+    "excerpt": "A multi-agent architecture where an LLM autonomously interacts directly with a robot's own codebase and APIs to gather what it needs, rather than requiring a human to pre-configure the AI with hardware knowledge.",
+    "hero": "MultiAgenthero.png",
+    "tags": ["Generative AI", "Physical Computing", "LEGO Robotics"],
+    "sections": [
+      { "id": "overview", "value": "Standard LLM-to-robot setups require someone to pre-load the AI with hardware documentation, API references, and system configuration. This project inverts that dependency: the LLM is given the ability to query the robot directly, asking what modules are installed, reading docstrings, and engaging in multi-turn conversations until it has gathered enough information to solve the problem. The human provides only a goal (e.g. 'follow the line', 'find the green bottle') and the LLM handles the rest, surfacing questions to the human only when it encounters ambiguity it cannot resolve from available hardware alone. Later iterations of the concept extended the network of available devices to webcams and other environment-sensing hardware, pointing toward a general-purpose multi-agent architecture for physical computing systems." },
+      { "id": "role", "value": "I was the conceptual lead and primary co-advisor, originating the architecture model, shaping the research direction across iterative prototypes, and co-supervising the student teams implementing the versions. The builds were student-executed; my contribution was the design logic, project direction, and ongoing technical support and feedback." },
+      { "id": "technical", "value": [
+        "WebSerial communication layer connecting command line and browser-based LLM interfaces directly to LEGO Education's SPIKE Prime, with the robot returning module listings and function docstrings in response to LLM queries",
+        "Multi-turn LLM-to-robot dialogue loop that continues until the LLM self-determines it has sufficient context to generate accurate behaviors",
+        "MicroPython updates on robot structured to respond to LLM interrogation keywords, giving the robot an API for LLM interactions",
+        "Human-in-the-loop integration surfaces only when the LLM cannot resolve ambiguity from hardware alone",
+        "Multi-agent extension prototypes incorporating webcam and OpenMV camera as additional environment-sensing agents, with the LLM coordinating across multiple inputs and outputs"
+      ]},
+      { "id": "decisions", "value": "The core architectural move was treating the robot as a queryable agent rather than a static output target. Priming an LLM with static hardware and code documentation is temporal: it's platform (and version) specific and can fail across different configurations and contexts, requiring the human update and debug. Letting the LLM ask the robot directly makes the system generalizable across hardware targets without needing updated documentation for each device." },
+      { "id": "collaboration", "value": "Each prototype iteration was implemented by student teams I co-supervised, across several configurations: LLM-to-robot only, LLM with camera agents, and hybrid human-in-the-loop variants. These proof-of-concept explorations point at new educational paradigms for students empowered by multi-agent supports for solving robotic challenges including multiple tehcnological devices." },
+      { "id": "media", "value": { "label": "Examples", "images": [
+        { "src": "MultiAgent1.png", "caption": "Robot setup (SPIKE Prime following blue line)" },
+        { "src": "MultiAgent2.png", "caption": "Command line interface of LLM asking human for feedback" },
+        { "src": "MultiAgent3.png", "caption": "Command line interface of LLM using camera for feedback" },
+        { "src": "MultiAgent4.png", "caption": "Web-based interface UI" }
+      ]}},
+      { "id": "outcomes", "value": [
+        "Demonstrated that an LLM can successfully self-configure for a physical hardware target through direct dialogue with the device, without human-provided documentation",
+        "The multi-agent camera extension showed that additional hardware that can be added to the system and accessible to the LLM using the same architecture",
+        "The project reframes a consisten problem in LLM-robotics integration: not 'how do we give the AI better, up-to-date documentation' but 'how do we enable the AI find out what it needs to know by itself'"
+      ]}
+    ]
+  },
+  {
+    "id": "genai-3d-modeling",
+    "year": "2024",
+    "title": "GenAI 3D Modeling: LLM-Generated Scenes in the Browser",
+    "excerpt": "A browser-based prototype that routes LLM output into navigable Three.js 3D scenes, replacing chat responses with interactive models and using the AI's simplification choices as a classroom discussion point.",
+    "hero": "ThreeJShero.jpg",
+    "tags": ["Generative AI", "Simulation"],
+    "sections": [
+      { "id": "overview", "value": "This quick prototype asks a simple question: what if the LLM's output was a rendered 3D scene instead of text? Students prompt in-browser, and the system generates Three.js geometry they can navigate with keyboard controls. The pedagogical hook is the solar system use case: when you ask an LLM for a scale model of the solar system, it decides what to represent and what to simplify. Those decisions are visible in the rendered output, opening up a conversation about what classic models preserve, what they distort, and how simplification for understanding can itself introduce misconceptions." },
+      { "id": "role", "value": "I conceived, designed, built, and tested this myself. It was a fast, self-directed exploration rather than a formal project. I quickly incorporated interface feedback from members of the lab for UI/UX refinement." },
+      { "id": "technical", "value": [
+        "LLM pipeline generating Three.js scene descriptions, parsed and rendered client-side as navigable 3D geometries",
+        "Keyboard-driven camera controls so students can fly through and inspect generated scenes from multiple angles",
+        "Browser-only deployment on any device without setup or download",
+        "Non-deterministic output treated as a feature: the same prompt produces a different model renders every run",
+        "No chat interface: LLM output is purely a visual artifact, keeping language generation away from students"
+      ]},
+      { "id": "media", "value": { "label": "Screenshots", "images": [{ "src": "ThreeJS1.png" }, { "src": "ThreeJS2.png" }] } },
+      { "id": "decisions", "value": "Non-determinism is usually a problem to engineer around. Here it's the pedagogical opportunity: when the same prompt produces a different solution (representation) each time, students can see directly that the LLM is making decisions, not retrieving a (single) correct answer. This provides a more accurate and useful mental model of how GenAI systems work. Producing rendered scenes also means there's no text moderation or unpredictable output language for students to encounter." },
+      { "id": "outcomes", "value": [
+        "The solar system use case (as an example) opened classroom discussion about what scientific models preserve and distort, with the LLM's own simplification making the idea of modeling and representation clear",
+        "The non-chat interface pattern worked as a student-safe way to expose LLM capabilities without direct language interaction",
+        "The prototype extended a running thread: LLM output doesn't have to be language, and when it isn't, new pedagogical possibilities open up"
+      ]}
+    ]
+  },
+  {
+    "id": "lecture-summaries",
+    "year": "2023",
+    "title": "Lecture Summaries: Automated Video Digests from Recorded Classes",
+    "excerpt": "A proof-of-concept using LLM transcript analysis and automated video editing to generate short, timestamped highlight reels from full lecture recordings, keyed to the most important concepts independent of when they appear.",
+    "hero": "LectureSummarieshero.png",
+    "tags": ["Generative AI", "University"],
+    "sections": [
+      { "id": "overview", "value": "Summarizing a recorded lecture isn't the same as taking the first and last five minutes. Concepts get introduced, revisited, and clarified at different points throughout a session, and a useful summary needs to honor that non-linear structure. This prototype uses LLM-based thematic extraction to cluster conceptually related moments across a full lecture recording, then assembles them into a summary video with timestamps that link back to the source material. The goal was a study tool students could leverage to scan a semester's worth of content quickly before an exam, with the original recording always one click away for deeper context." },
+      { "id": "role", "value": "I conceived and built the full prototype, from transcript analysis through automated video editing and output assembly. This was a self-directed proof-of-concept exploration." },
+      { "id": "technical", "value": [
+        "LLM transcript analysis pipeline identifying key themes, extracting conceptually relevant passages (with direct instructor quotes), and mapping them to timestamps across the full lecture",
+        "Topic threading that recognizes same/similar concepts appearing at multiple non-linear points and aggregates all related moments into a single summary segment",
+        "Automated video editing via MoviePy, with clips extracted, ordered, and assembled without any manual editing",
+        "Timestamp linking connects summary clips back to original lecture timecodes for student access to full/original context on demand",
+        "Output structured by topic rather than chronology, designed for exam review rather than sequential watching"
+      ]},
+      { "id": "decisions", "value": "Thematic extraction rather than simple keyword matching was the conceptual choice and leveraged the power of the LLM technology. Theme extraction enables grouping of conceptually related moments regardless of the exact language used, which is what makes the summary more useful for review. Keeping timestamps linking back to original source material was equally important: the summary becomes an easy navigation to, not a replacement for, the full original lecture." },
+      { "id": "media", "value": { "label": "Workflow Diagram", "images": [
+        { "src": "LectureSummaries1.png", "caption": "Pipeline overview: transcript analysis, theme extraction, and automated video assembly" }
+      ]}},
+      { "id": "outcomes", "value": [
+        "The prototype generated coherent summary videos from full lecture recordings, with thematically grouped clips drawn from across non-contiguous segments of the session",
+        "The 'summary as navigation' for original source material was essential vs 'summary as replacement,' and the concept could potentially be applied to other use cases",
+        "Established a reusable pipeline (LLM semantic extraction into programmatic media manipulation) that was easily (and potentially, automatically) applied to subsequently generated content"
+      ]}
+    ]
+  }
+]
